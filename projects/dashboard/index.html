@@ -1,0 +1,132 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Grants-BI | Dashboard</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <meta name="description" content="David Thor">
+    <meta name="keywords" content="Admin, Bootstrap 3, Template, Theme, Responsive">
+    <!-- bootstrap 3.0.2 -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- font Awesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body ng-app="app">
+    <div id="main-wrapper-sn">
+        <div class="head-sn">
+            <a href="index.html" class="logo-sn">
+              Hello Dave
+          </a>
+            <div class="nav-sn-container">
+                <div class="navbar-right">
+                    <ul class="nav navbar-nav">
+                        <!-- Messages: style can be found in dropdown.less-->
+                        <li class="dropdown messages-menu open">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-envelope"></i>
+                                <span class="label label-success">4</span>
+                            </a>
+                        </li>
+                        <li class="dropdown tasks-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-tasks"></i>
+                                <span class="label label-danger">9</span>
+                            </a>
+                        </li>
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-user"></i>
+                                <span>David Powers <i class="caret"></i></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <section class="left-sidebar-sec">
+            <ul class="sidebar-menu">
+                <li>
+                    <a href="index.html">
+                        <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="general.html">
+                        <i class="fa fa-gavel"></i> <span>General</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="basic_form.html">
+                        <i class="fa fa-globe"></i> <span>Basic Elements</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="simple.html">
+                        <i class="fa fa-glass"></i> <span>Simple tables</span>
+                    </a>
+                </li>
+
+            </ul>
+
+        </section>
+        <section class="middle-sec row">
+            <!--First row in Middle-->
+            <div class="sec-div col-lg-8">
+                <div class="graph-sn panel panel-default">
+                    <div class="panel-body" ng-controller="hcLineChartCtrl">
+                    <hc-line-chart chart-data="lineChartData"></hc-line-chart>
+                    </div>
+                </div>
+            </div>
+            <div class=" sec-div col-lg-4">
+                <div class="notif-sn panel panel-default">
+                    <div class="panel-body">Notifications</div>
+                </div>
+            </div>
+            <!--Second row in Middle-->
+            <div class="sec-div col-lg-8">
+                <div class="graph-sn panel panel-default">
+                    <div class="panel-body">Graph</div>
+                </div>
+            </div>
+            <div class=" sec-div col-lg-4">
+                <div class="notif-sn panel panel-default">
+                    <div class="panel-body">Notifications</div>
+                </div>
+            </div>
+            <!--Second row in Middle-->
+            <div class="sec-div col-lg-6">
+                <div class="graph-sn panel panel-default">
+                    <div class="panel-body">Graph</div>
+                </div>
+            </div>
+            <div class=" sec-div col-lg-6">
+                <div class="notif-sn panel panel-default">
+                    <div class="panel-body">Notifications</div>
+                </div>
+            </div>
+        </section>
+
+        <footer></footer>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/4.2.6/highcharts.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/app.features.mod.js"></script>
+    <script src="app/controllers/visControllers.js"></script>
+    <script src="app/directives/visDirectives.js"></script>
+</body>
+
+</html>

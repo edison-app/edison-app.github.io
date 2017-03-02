@@ -1,0 +1,81 @@
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#main-wrapper-sn{
+  overflow-x: hidden!important;
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100%;
+  background: #f1f2f7;
+}
+
+.head-sn {
+  height: 50px;
+  width: 100%;
+  margin-bottom: 0;
+  /*background:#f1f2f7;*/
+}
+
+.logo-sn {
+  float: left;
+  font-size: 20px;
+  width: 220px;
+  line-height: 50px;
+  display: block;
+  background-color: #283744;
+  text-align: center;
+}
+
+.nav-sn{
+    margin-left: 220px;
+}
+
+.navbar-right a{
+  color:#000;
+}
+
+.left-sidebar-sec{
+background: #39435C;
+    top: 50px;
+    position: absolute;
+    width: 220px;
+    min-height: 2000px;
+     /*text-align: center;*/
+}
+
+.left-sidebar-sec .sidebar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.left-sidebar-sec .sidebar-menu > li > a{
+  padding: 12px 5px 12px 15px;
+    display: block;
+}
+
+.left-sidebar-sec .sidebar-menu > li > a > span{
+  margin-left: 3px;
+}
+
+.sec-div{
+  padding: 0px;
+}
+
+.middle-sec{
+ margin-left: 220px;
+}
+
+.graph-sn{
+  background-color: #fff;;
+  margin: 0px !important;
+}
+
+.notif-sn{
+  background-color: green;
+  margin: 0px !important;
+}
+
+

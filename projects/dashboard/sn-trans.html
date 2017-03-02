@@ -1,0 +1,126 @@
+<div id="container-hc" style="min-width: 310px; height: 400px; margin: 0 auto">
+</div>
+
+<button id="2016">FY 2016</button>
+<button id="2015">FY 2015</button>
+<button id="2014">FY 2014</button>
+<button id="2013">FY 2013</button>
+
+
+<script type="text/javascript">
+    $j.noConflict();
+    $j(document).ready(function () {
+        pullData();
+        //Button Action
+    });
+
+
+    // ---- Get the params ----
+    function pullData() {
+        <![CDATA[
+var params = {};
+        if (location.search) {
+            var parts = location.search.substring(1).split("&");
+
+            for (var i = 0; i < parts.length; i++) {
+                var nv = parts[i].split('=');
+                if (!nv[0]) continue;
+                params[nv[0]] = nv[1] || true;
+            }
+        }
+]]>
+
+var prinOff = params.PrinOffice;
+        var progOff = params.ProgOffice;
+        var progNbr = params.ProgNumber;
+        var state = params.State;
+
+
+        // ---- Call Script Include ----
+        var ga = new GlideAjax("Scripts_SV");  // name of Ajax Script Include
+        ga.addParam("sysparm_name", "gbiTestWC");  // name of function
+        ga.addParam("sysparm_prinOff", prinOff);  // pass in our params
+        ga.addParam("sysparm_progOff", progOff);
+        ga.addParam("sysparm_progNbr", progNbr);
+        ga.addParam("sysparm_state", state);
+        ga.getXML(buildChart);  // run ajaxresponse with the return values
+    }
+
+    // ---- Draw the Chart ----
+
+    function buildChart(response) {
+        <![CDATA[
+	var answer = response.responseXML.documentElement.getAttribute("answer");
+        answer = answer.evalJSON(); //Transform the JSON string to an object
+        console.log(answer);
+]]>
+
+
+            //alert(JSON.stringify(answer,null,2));
+
+
+            <![CDATA[
+                // Use commas as the thousands separator in numbers...
+                Highcharts.setOptions({
+                    lang: {
+                        thousandsSep: ','
+                    }
+                });
+	var chart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'container-hc',
+                zoomType: 'x'
+            },
+            title: {
+                text: 'Grant Funds Execution'
+            },
+            subtitle: {
+                text: document.ontouchstart === undefined ?
+                    'Click and drag in the plot area to zoom' : 'Pinch the chart to zoom in'
+            },
+            credits: {
+                enabled: false
+            },
+            xAxis: {
+                type: 'datetime',
+                dateTimeLabelFormats: {
+                    day: '%b \'%y'
+                }
+
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Total Funds Available'
+                }
+
+            },
+            legend: {
+                enabled: true
+            },
+            tooltip: {
+                //pointFormat: '<b>{series.name}</b><br/>{point.x:%d%b%Y}: 	$ {point.y: 1f}   '
+                pointFormat: '<b>{series.name}</b><br/>$ {point.y:,.0f}   '
+            },
+            series: answer
+
+        });
+]]>
+
+            <![CDATA[
+                $j('#2016').click(function () {
+                    chart.xAxis[0].setExtremes(Date.UTC(2015, 7, 1), Date.UTC(2016, 6, 30), true);
+                });
+            $j('#2015').click(function () {
+                chart.xAxis[0].setExtremes(Date.UTC(2014, 7, 1), Date.UTC(2015, 6, 30), true);
+            });
+            $j('#2014').click(function () {
+                chart.xAxis[0].setExtremes(Date.UTC(2013, 7, 1), Date.UTC(2014, 6, 30), true);
+            });
+            $j('#2013').click(function () {
+                chart.xAxis[0].setExtremes(Date.UTC(2012, 7, 1), Date.UTC(2013, 6, 30), true);
+            });
+            chart.redraw();
+            ]]>
+};
+</script>
