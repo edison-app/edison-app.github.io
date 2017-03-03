@@ -1,0 +1,21 @@
+<table class="table display compact" id="tblPrograms" cellspacing="5" width="100%">
+    <thead>
+        <tr>
+            <th>Grantee Name</th>
+            <th>DUNS</th>
+            <th>State</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>Grantee Name</th>
+            <th>DUNS</th>
+            <th>State</th>
+        </tr>
+    </tfoot>
+    <tr id="program" ng-repeat="program in tblChartPrograms" on-last-repeat="">
+        <td>{{program.name}}</td>
+        <td>{{program.duns}}</td>
+        <td>{{program.state}}</td>
+    </tr>
+</table>
