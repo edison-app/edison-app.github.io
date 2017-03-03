@@ -69,13 +69,19 @@ background: #39435C;
 }
 
 .graph-sn{
-  background-color: #fff;;
+  background-color:#fff;
   margin: 0px !important;
 }
 
 .notif-sn{
-  background-color: green;
   margin: 0px !important;
+   overflow: hidden;
+    width: auto;
+    height: 476px;
 }
 
-
+.alert{
+    position: relative;
+    border-radius: 2px;
+    border: none;
+}
