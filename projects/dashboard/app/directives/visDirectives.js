@@ -10,16 +10,16 @@ features.directive('hcLineChart', ['$location', function ($location) {
         replace: false,
         scope: { data: '=chartData' },
         link: function (scope, element, attrs) {
-         /*   var params = {};
-            if ($location.search) {
-                var parts = $location.search.substring(1).split("&");
-
-                for (var i = 0; i < parts.length; i++) {
-                    var nv = parts[i].split('=');
-                    if (!nv[0]) continue;
-                    params[nv[0]] = nv[1] || true;
-                }
-            } */
+            /*   var params = {};
+               if ($location.search) {
+                   var parts = $location.search.substring(1).split("&");
+   
+                   for (var i = 0; i < parts.length; i++) {
+                       var nv = parts[i].split('=');
+                       if (!nv[0]) continue;
+                       params[nv[0]] = nv[1] || true;
+                   }
+               } */
 
             function buildChart() {
 
@@ -29,7 +29,7 @@ features.directive('hcLineChart', ['$location', function ($location) {
                         thousandsSep: ','
                     }
                 });
-                var graph = new Highcharts.Chart(element[0],{
+                var graph = new Highcharts.Chart(element[0], {
                     chart: {
                         zoomType: 'x',
                         width: 850,
@@ -64,14 +64,69 @@ features.directive('hcLineChart', ['$location', function ($location) {
                     },
                     tooltip: {
                         //pointFormat: '<b>{series.name}</b><br/>{point.x:%d%b%Y}: 	$ {point.y: 1f}   '
-                        pointFormat: '<b>{' + scope.name +'}</b><br/>$ {point.y:,.0f}   '
+                        pointFormat: '<b>{' + scope.name + '}</b><br/>$ {point.y:,.0f}   '
                     },
                     series: scope.data
                 });
                 graph.redraw();
             }
-               buildChart();
+            buildChart();
         }
     };
     return lineGroupObj;
 }]);
+
+features.directive('hcBarChart', ['$location', function ($location) {
+    var barGroupObj = {
+        restrict: 'E',
+        replace: false,
+        scope: { data: '=chartData' },
+        link: function (scope, element, attrs) {
+            function buildChart() {
+                var chart = new Highcharts.Chart(element[0], {
+                    chart: {
+                        type: 'column',
+                    },
+                    credits: {
+                        enabled: false
+                    },
+                    title: {
+                        text: 'Grant Length Histogram'
+                    },
+
+                    xAxis: {
+                        type: 'category',
+                        labels: {
+                            rotation: -45,
+                            style: {
+                                fontSize: '13px',
+                                fontFamily: 'Verdana, sans-serif'
+                            }
+                        }
+                    },
+                    yAxis: {
+                        min: 0,
+                        title: {
+                            text: 'Number of Grants'
+                        }
+                    },
+                    legend: {
+                        enabled: false
+                    },
+                    tooltip: {
+                        pointFormat: 'Grants: <b>{point.y} </b>'
+                    },
+                    series: [{
+                        name: 'Population',
+                        data: scope,
+                    }]
+                });
+            }
+            buildChart();
+        }
+    };
+    return barGroupObj;
+}]);
+
+
+
