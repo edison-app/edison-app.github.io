@@ -2,19 +2,19 @@ features.directive('onLastRepeat', function () {
     return function (scope, element, attrs) {
         if (scope.$last) setTimeout(function () {
 
-            $j('#programs tfoot th').each(function () {
-                var title = $j(this).text();
-                $j(this).html('<input type="text" placeholder="Search ' + title + '" />');
+            $('#programs tfoot th').each(function () {
+                var title = $(this).text();
+                $(this).html('<input type="text" placeholder="Search ' + title + '" />');
             });
 
 
-            var list = $j('#programs').DataTable({
+            var list = $('#programs').DataTable({
                 "processing": true,
                 "responsive": true,
 
-                buttons: [
-                    'pdf'
-                ],
+                //buttons: [
+                //    'pdf'
+               // ],
                 "order": [
                     [0, "asc"]
                 ]
@@ -23,7 +23,7 @@ features.directive('onLastRepeat', function () {
             list.columns().every(function () {
                 var that = this;
 
-                $j('input', this.footer()).on('keyup change', function () {
+                $('input', this.footer()).on('keyup change', function () {
                     if (that.search() !== this.value) {
                         that
                             .search(this.value)
