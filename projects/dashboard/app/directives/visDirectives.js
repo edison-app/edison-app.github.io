@@ -32,8 +32,8 @@ features.directive('hcLineChart', ['$location', function ($location) {
                 var graph = new Highcharts.Chart(element[0],{
                     chart: {
                         zoomType: 'x',
-                        width: 740,
-                        height: 540,
+                        width: 850,
+                        height: 445,
                     },
                     title: {
                         text: 'Grant Funds Execution'
