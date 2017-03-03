@@ -8,7 +8,7 @@ features.controller("tableController", ['$scope', function ($scope) {
         {
             "duns": "073364358",
             "name": "QUECHAN INDIAN TRIBE",
-            "state": ""
+            "state": "CA"
         },
         {
             "duns": "074647165",
