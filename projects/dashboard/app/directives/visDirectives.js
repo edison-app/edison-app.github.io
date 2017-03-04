@@ -87,6 +87,8 @@ features.directive('hcBarChart', function () {
                 var chart = new Highcharts.Chart(element[0], {
                     chart: {
                         type: 'column',
+                        width:400,
+                        height:477
                     },
                     credits: {
                         enabled: false
