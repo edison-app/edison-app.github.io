@@ -197,7 +197,7 @@ features.controller('hcLineChartCtrl', ['$scope', function ($scope) {
   ]
 }]);
 features.controller('hcBarChartCtrl', ['$scope', function ($scope) {
-  $scope.barChartData = [
+  $scope.barChartData =  [
         [
           "1 Year",
           1643
