@@ -76,13 +76,14 @@ features.directive('hcLineChart', ['$location', function ($location) {
     return lineGroupObj;
 }]);
 
-features.directive('hcBarChart', ['$location', function ($location) {
+features.directive('hcBarChart', function () {
+    
     var barGroupObj = {
         restrict: 'E',
         replace: false,
-        scope: { data: '=chartData' },
+        scope: { data: '=barData' },
         link: function (scope, element, attrs) {
-            function buildChart() {
+            function buildBarChart() {
                 var chart = new Highcharts.Chart(element[0], {
                     chart: {
                         type: 'column',
@@ -118,15 +119,16 @@ features.directive('hcBarChart', ['$location', function ($location) {
                     },
                     series: [{
                         name: 'Population',
-                        data: scope,
+                        data: scope.data
                     }]
+                    
                 });
             }
-            buildChart();
+            buildBarChart();
         }
     };
     return barGroupObj;
-}]);
+});
 
 
 
