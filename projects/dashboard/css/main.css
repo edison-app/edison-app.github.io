@@ -6,6 +6,12 @@ a {
     text-decoration: none;
 }
 
+.container-main-heading {
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 20px;
+  padding: 16px 5px 16px 15px;
+}
+
 #main-wrapper-sn{
   overflow-x: hidden!important;
   font-family: 'Lato', sans-serif;
@@ -102,13 +108,32 @@ text{
     width: auto;
     height: 490px;
 }
-
 .alert{
     position: relative;
     border-radius: 2px;
-    border: none;
+    /*border: none;*/
+    border-left: 6px solid #ccc!important;
+    border: 1px solid #ccc;
 }
 
+.alert-danger{
+    color: #588290;
+    background-color:#d3e2b6;
+    border-left: 6px solid red !important;
+    border: 1px solid red;
+}
+
+.alert-warning{
+    color: #505050;
+    background-color:#aaccb1;
+    border-left: 6px solid yellow !important;
+    border: 1px solid yellow;
+}
+
+.alert-info{
+    border-left: 6px solid green !important;
+    border: 1px solid green;
+}
 .teammates-sn a{
     color: #505050 !important;
 }
