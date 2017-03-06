@@ -124,13 +124,12 @@ text{
 }
 
 .alert-danger{
-    color: #588290;
+    
     border-left: 6px solid red !important;
     border: 1px solid red;
 }
 
 .alert-warning{
-    color: #505050;
     border-left: 6px solid yellow !important;
     border: 1px solid yellow;
 }
