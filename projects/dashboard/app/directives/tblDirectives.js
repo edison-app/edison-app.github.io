@@ -9,6 +9,9 @@ features.directive('onLastRepeat', function () {
 
 
             var list = $('#programs').DataTable({
+                "scrollY": '50vh',
+                "scrollCollapse": true,
+                "paging": false,
                 "processing": true,
                 "responsive": true,
 

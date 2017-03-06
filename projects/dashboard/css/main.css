@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Michroma');
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One');
+
 a {
     color: #fff;
     text-decoration: none;
@@ -15,17 +18,22 @@ a {
   height: 50px;
   width: 100%;
   margin-bottom: 0;
-  /*background:#f1f2f7;*/
+  background:#0a1728;
+}
+
+.head-sn a{
+  color:#0a1728;
 }
 
 .logo-sn {
   float: left;
-  font-size: 20px;
+  font-size: 21px;
   width: 220px;
   line-height: 50px;
   display: block;
-  background-color: #283744;
+  background-color: #fff;
   text-align: center;
+  font-family: 'Michroma', sans-serif;
 }
 
 .nav-sn{
@@ -33,15 +41,26 @@ a {
 }
 
 .navbar-right a{
-  color:#000;
+  color:#fff;
+  border-right: 1px solid #fff;
+}
+
+.navbar-right a:first-child{
+  color:#fff;
+  border-left: 1px solid #fff;
+}
+
+text{
+   font-family: 'Julius Sans One', sans-serif;
 }
 
 .left-sidebar-sec{
-background: #39435C;
+    background: #0a1728;
     top: 50px;
     position: absolute;
     width: 220px;
     min-height: 2000px;
+    font-family: 'Julius Sans One', sans-serif;
      /*text-align: center;*/
 }
 
@@ -52,10 +71,10 @@ background: #39435C;
 }
 
 .left-sidebar-sec .sidebar-menu > li > a{
-  padding: 12px 5px 12px 15px;
-    display: block;
+  padding: 16px 5px 16px 15px;
+  display: block;
+  border-bottom: 1px solid #fff;
 }
-
 .left-sidebar-sec .sidebar-menu > li > a > span{
   margin-left: 3px;
 }
@@ -65,23 +84,31 @@ background: #39435C;
 }
 
 .middle-sec{
+ background:#0a1728;
  margin-left: 220px;
+
 }
 
 .graph-sn{
   background-color:#fff;
   margin: 0px !important;
+  height: 490px;
+  width: auto;
 }
 
 .notif-sn{
     margin: 0px !important;
     overflow: hidden;
     width: auto;
-    height: 477px;
+    height: 490px;
 }
 
 .alert{
     position: relative;
     border-radius: 2px;
     border: none;
+}
+
+.teammates-sn a{
+    color: #505050 !important;
 }

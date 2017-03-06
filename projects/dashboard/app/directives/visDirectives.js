@@ -32,7 +32,7 @@ features.directive('hcLineChart', ['$location', function ($location) {
                 var graph = new Highcharts.Chart(element[0], {
                     chart: {
                         zoomType: 'x',
-                        width: 850,
+                        width: 720,
                         height: 445,
                     },
                     title: {
@@ -87,7 +87,7 @@ features.directive('hcBarChart', function () {
                 var chart = new Highcharts.Chart(element[0], {
                     chart: {
                         type: 'column',
-                        width:400,
+                        width:340,
                         height:477
                     },
                     credits: {
