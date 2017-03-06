@@ -10,6 +10,7 @@ a {
   font-family: 'Julius Sans One', sans-serif;
   font-size: 20px;
   padding: 16px 5px 16px 15px;
+  text-align:center;
 }
 
 #main-wrapper-sn{
@@ -51,6 +52,9 @@ a {
   border-right: 1px solid #fff;
 }
 
+ .navbar-right a:hover{
+color:#0645AD !important}
+
 .navbar-right a:first-child{
   color:#fff;
   border-left: 1px solid #fff;
@@ -76,6 +80,10 @@ text{
     padding: 0;
 }
 
+.left-sidebar-sec .sidebar-menu > li > a:hover{
+  background-color: #f1f1f1}
+
+
 .left-sidebar-sec .sidebar-menu > li > a{
   padding: 16px 5px 16px 15px;
   display: block;
@@ -90,9 +98,7 @@ text{
 }
 
 .middle-sec{
- background:#0a1728;
  margin-left: 220px;
-
 }
 
 .graph-sn{
