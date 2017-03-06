@@ -113,6 +113,7 @@ text{
     overflow: hidden;
     width: auto;
     height: 490px;
+    padding-right:15px;
 }
 .alert{
     position: relative;
