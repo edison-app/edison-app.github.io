@@ -9,7 +9,7 @@ a {
 .container-main-heading {
   font-family: 'Julius Sans One', sans-serif;
   font-size: 20px;
-  padding: 16px 5px 16px 15px;
+  padding: 8px 5px 8px 15px;
   text-align:center;
 }
 
@@ -106,6 +106,7 @@ text{
   margin: 0px !important;
   height: 490px;
   width: auto;
+  font-family: 'Julius Sans One', sans-serif;
 }
 
 .notif-sn{
@@ -114,6 +115,13 @@ text{
     width: auto;
     height: 490px;
     padding-right:15px;
+}
+
+.table-sn{
+  background-color:#fff;
+  margin: 0px !important;
+  height: 490px;
+  width: auto;
 }
 .alert{
     position: relative;
