@@ -120,9 +120,18 @@ text{
 .table-sn{
   background-color:#fff;
   margin: 0px !important;
-  height: 490px;
+  height: 550px;
   width: auto;
 }
+
+.bar-chart-sn{
+    margin: 0px !important;
+    overflow: hidden;
+    width: auto;
+    height: 550px;
+    padding-right:15px;
+}
+
 .alert{
     position: relative;
     border-radius: 2px;
