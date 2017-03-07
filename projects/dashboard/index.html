@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -23,11 +24,19 @@
 
 <body ng-app="app">
     <div id="main-wrapper-sn">
-        <div class="head-sn">
+        <section class="head-sn">
             <a href="index.html" class="logo-sn">
               Grants-Bi
           </a>
             <div class="nav-sn-container">
+              
+                    <a href="#" class="navbar-btn sidebar-toggle" ng-click="toggleLeftSideBar = !toggleLeftSideBar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+               
                 <div class="navbar-right">
                     <ul class="nav navbar-nav">
                         <!-- Messages: style can be found in dropdown.less-->
@@ -53,8 +62,8 @@
                     </ul>
                 </div>
             </div>
-        </div>
-        <section class="left-sidebar-sec">
+        </section>
+        <section class="left-sidebar-sec" data-toggle="collapse" ng-show="!toggleLeftSideBar">
             <ul class="sidebar-menu">
                 <li>
                     <a href="index.html">
@@ -128,7 +137,7 @@
             <div class="sec-div col-lg-8">
                 <div class="table-sn panel panel-default">
                     <div class="panel-body" ng-controller="tableController">
-                         <div class="container-main-heading">
+                        <div class="container-main-heading">
                             Grants Table
                         </div>
                         <table-load></table-load>
@@ -142,194 +151,7 @@
                     </div>
                 </div>
             </div>
-            <!--Second row in Middle-->
-            <div class="sec-div col-lg-6">
-                <div class="teammates-sn panel panel-default">
-                    <div class="panel-body">
-                        <div class="panel">
-                            <div class="container-main-heading">
-                                Teammates
-                            </div>
-                            <ul class="list-group teammates">
-                                <li class="list-group-item">
-                                    <a href=""><img src="img/26115.jpg" width="50" height="50"></a>
-                                    <span class="pull-right label label-danger inline m-t-15">Admin</span>
-                                    <a href="">Damon Parker</a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a href=""><img src="img/26115.jpg" width="50" height="50"></a>
-                                    <span class="pull-right label label-info inline m-t-15">Member</span>
-                                    <a href="">Joe Waston</a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a href=""><img src="img/26115.jpg" width="50" height="50"></a>
-                                    <span class="pull-right label label-warning inline m-t-15">Editor</span>
-                                    <a href="">Jannie Dvis</a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a href=""><img src="img/26115.jpg" width="50" height="50"></a>
-                                    <span class="pull-right label label-warning inline m-t-15">Editor</span>
-                                    <a href="">Emma Welson</a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a href=""><img src="img/26115.jpg" width="50" height="50"></a>
-                                    <span class="pull-right label label-success inline m-t-15">Subscriber</span>
-                                    <a href="">Emma Welson</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class=" sec-div col-lg-6">
-                <div class="notif-sn panel panel-default">
-                    <div class="panel-body">
-                        <section class="panel tasks-widget">
-                            <div class="container-main-heading">
-                                To-Do List
-                            </div>
-                            <div class="panel-body">
-
-                                <div class="task-content">
-
-                                    <ul class="task-list ui-sortable">
-                                        <li>
-                                            <div class="task-checkbox">
-                                                <!-- <input type="checkbox" class="list-child" value=""  /> -->
-                                                <div class="icheckbox_flat-grey" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" class="flat-grey list-child" style="position: absolute; opacity: 0;">
-                                                    <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
-                                                </div>
-                                                <!-- <input type="checkbox" class="square-grey"/> -->
-                                            </div>
-                                            <div class="task-title">
-                                                <span class="task-title-sp">Director is Modern Dashboard</span>
-                                                <span class="label label-success">2 Days</span>
-                                                <div class="pull-right hidden-phone">
-                                                    <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
-                                                    <button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button>
-                                                    <button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="task-checkbox">
-                                                <!-- <input type="checkbox" class="list-child" value=""  /> -->
-                                                <div class="icheckbox_flat-grey" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" class="flat-grey" style="position: absolute; opacity: 0;">
-                                                    <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
-                                                </div>
-                                            </div>
-                                            <div class="task-title">
-                                                <span class="task-title-sp">Fully Responsive &amp; Bootstrap 3.0.2 Compatible</span>
-                                                <span class="label label-danger">Done</span>
-                                                <div class="pull-right hidden-phone">
-                                                    <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
-                                                    <button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button>
-                                                    <button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="task-checkbox">
-                                                <!-- <input type="checkbox" class="list-child" value=""  /> -->
-                                                <div class="icheckbox_flat-grey" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" class="flat-grey" style="position: absolute; opacity: 0;">
-                                                    <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
-                                                </div>
-                                            </div>
-                                            <div class="task-title">
-                                                <span class="task-title-sp">Latest Design Concept</span>
-                                                <span class="label label-warning">Company</span>
-                                                <div class="pull-right hidden-phone">
-                                                    <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
-                                                    <button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button>
-                                                    <button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="task-checkbox">
-                                                <!-- <input type="checkbox" class="list-child" value=""  /> -->
-                                                <div class="icheckbox_flat-grey" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" class="flat-grey" style="position: absolute; opacity: 0;">
-                                                    <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
-                                                </div>
-                                            </div>
-                                            <div class="task-title">
-                                                <span class="task-title-sp">Write well documentation for this theme</span>
-                                                <span class="label label-primary">3 Days</span>
-                                                <div class="pull-right hidden-phone">
-                                                    <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
-                                                    <button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button>
-                                                    <button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="task-checkbox">
-                                                <!-- <input type="checkbox" class="list-child" value=""  /> -->
-                                                <div class="icheckbox_flat-grey" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" class="flat-grey" style="position: absolute; opacity: 0;">
-                                                    <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
-                                                </div>
-                                            </div>
-                                            <div class="task-title">
-                                                <span class="task-title-sp">Don't bother to download this Dashbord</span>
-                                                <span class="label label-inverse">Now</span>
-                                                <div class="pull-right">
-                                                    <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
-                                                    <button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button>
-                                                    <button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="task-checkbox">
-                                                <!-- <input type="checkbox" class="list-child" value=""  /> -->
-                                                <div class="icheckbox_flat-grey" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" class="flat-grey" style="position: absolute; opacity: 0;">
-                                                    <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
-                                                </div>
-                                            </div>
-                                            <div class="task-title">
-                                                <span class="task-title-sp">Give feedback for the template</span>
-                                                <span class="label label-success">2 Days</span>
-                                                <div class="pull-right hidden-phone">
-                                                    <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
-                                                    <button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button>
-                                                    <button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="task-checkbox">
-                                                <!-- <input type="checkbox" class="list-child" value=""  /> -->
-                                                <div class="icheckbox_flat-grey" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" class="flat-grey" style="position: absolute; opacity: 0;">
-                                                    <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
-                                                </div>
-                                            </div>
-                                            <div class="task-title">
-                                                <span class="task-title-sp">Tell your friends about this admin template</span>
-                                                <span class="label label-danger">Now</span>
-                                                <div class="pull-right hidden-phone">
-                                                    <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
-                                                    <button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button>
-                                                    <button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button>
-                                                </div>
-                                            </div>
-                                        </li>
-
-                                    </ul>
-                                </div>
-
-                                <div class=" add-task-row">
-                                    <a class="btn btn-success btn-sm pull-left" href="#">Add New Tasks</a>
-                                    <a class="btn btn-default btn-sm pull-right" href="#">See All Tasks</a>
-                                </div>
-                            </div>
-                        </section>
-
-                    </div>
-                </div>
-            </div>
         </section>
-
         <footer></footer>
     </div>
 
@@ -345,6 +167,7 @@
     <script src="app/directives/visDirectives.js"></script>
     <script src="app/controllers/tblControllers.js"></script>
     <script src="app/directives/tblDirectives.js"></script>
+    <script src="app/controllers/viewBtnControllers.js"></script>
 </body>
 
 </html>

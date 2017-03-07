@@ -131,6 +131,3 @@ features.directive('hcBarChart', function () {
     };
     return barGroupObj;
 });
-
-
-

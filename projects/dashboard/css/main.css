@@ -43,6 +43,36 @@ a {
   font-family: 'Michroma', sans-serif;
 }
 
+.sidebar-toggle{
+    float: left;
+    padding: 7px 5px;
+    margin-top: 8px;
+    margin-right: 0;
+    margin-bottom: 8px;
+    margin-left: 15px;
+    background-image: none;
+    border: 1px solid #fff;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+    color: #3c8dbc;
+}
+
+.icon-bar{
+    display: block;
+    width: 22px;
+    height: 2px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: #fff;
+    margin-top:5px;
+}
+
+.icon-bar:nth-child(2){
+  margin-top:2px;
+}
+
 .nav-sn{
     margin-left: 220px;
 }
