@@ -127,8 +127,13 @@ text{
   padding: 0px;
 }
 
+
 .middle-sec{
  margin-left: 220px;
+}
+
+.expand {
+  margin-left: 0px;
 }
 
 .graph-sn{
