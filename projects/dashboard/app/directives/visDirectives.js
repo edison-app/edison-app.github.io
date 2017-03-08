@@ -69,6 +69,9 @@ features.directive('hcLineChart', ['$location', function ($location) {
                     series: scope.data
                 });
                 graph.redraw();
+                $('#nav-btn').click(function () {
+                    graph.setSize(900, 445);
+                });
             }
             buildChart();
         }
@@ -77,7 +80,7 @@ features.directive('hcLineChart', ['$location', function ($location) {
 }]);
 
 features.directive('hcBarChart', function () {
-    
+
     var barGroupObj = {
         restrict: 'E',
         replace: false,
@@ -87,8 +90,8 @@ features.directive('hcBarChart', function () {
                 var chart = new Highcharts.Chart(element[0], {
                     chart: {
                         type: 'column',
-                        width:340,
-                        height:477
+                        width: 340,
+                        height: 477
                     },
                     credits: {
                         enabled: false
@@ -123,7 +126,9 @@ features.directive('hcBarChart', function () {
                         name: 'Population',
                         data: scope.data
                     }]
-                    
+                });
+                $('#nav-btn').click(function () {
+                    chart.setSize(420, 477);
                 });
             }
             buildBarChart();
