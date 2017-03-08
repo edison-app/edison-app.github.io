@@ -69,9 +69,17 @@ features.directive('hcLineChart', ['$location', function ($location) {
                     series: scope.data
                 });
                 graph.redraw();
-                $('#nav-btn').click(function () {
+                function handler1() {
                     graph.setSize(900, 445);
-                });
+                    $(this).one("click", handler2);
+                }
+
+                function handler2() {
+                    graph.setSize(720, 445);
+                    $(this).one("click", handler1);
+                }
+                $('#nav-btn').one("click", handler1);
+
             }
             buildChart();
         }
@@ -127,9 +135,16 @@ features.directive('hcBarChart', function () {
                         data: scope.data
                     }]
                 });
-                $('#nav-btn').click(function () {
+                function handler1() {
                     chart.setSize(420, 477);
-                });
+                    $(this).one("click", handler2);
+                }
+
+                function handler2() {
+                    chart.setSize(340, 477);
+                    $(this).one("click", handler1);
+                }
+                $('#nav-btn').one("click", handler1);
             }
             buildBarChart();
         }
