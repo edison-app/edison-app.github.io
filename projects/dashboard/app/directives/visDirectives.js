@@ -131,6 +131,16 @@ features.directive('hcBarChart', function () {
                         data: scope.data
                     }]
                 });
+                function handler1() {
+                    chart.setSize(470, 445);
+                    $(this).one("click", handler2);
+                }
+
+                function handler2() {
+                    chart.setSize(470, 340);
+                    $(this).one("click", handler1);
+                }
+                $('#nav-btn').one("click", handler1);
             }
             buildBarChart();
         }

@@ -95,7 +95,7 @@
             <!--First row in Middle-->
             <div class="sec-div col-lg-8">
                 <div class="graph-sn panel panel-default">
-                    <div id="hc-container" class="panel-body" ng-controller="hcLineChartCtrl" style="width:100%">
+                    <div id="hc-container" class="panel-body" ng-controller="hcLineChartCtrl" >
                         <hc-line-chart chart-data="lineChartData"></hc-line-chart>
                     </div>
                 </div>
@@ -144,10 +144,10 @@
                     </div>
                 </div>
             </div>
-            <div class=" sec-div col-lg-4">
+            <div class="sec-div col-lg-4">
                 <div class="bar-chart-sn panel panel-default">
                     <div class="panel-body" ng-controller="hcBarChartCtrl">
-                        <hc-bar-chart bar-data="barChartData"></hc-bar-chart>
+                        <hc-bar-chart class="hc-bar-chart"bar-data="barChartData" ></hc-bar-chart>
                     </div>
                 </div>
             </div>
