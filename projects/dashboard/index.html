@@ -23,7 +23,7 @@
 </head>
 
 <body ng-app="app">
-    <div id="main-wrapper-sn">
+    <div id="main-wrapper-sn"  ng-controller="navBarBtnController">
         <section class="head-sn">
             <a href="index.html" class="logo-sn">
               Grants-Bi
@@ -63,7 +63,7 @@
                 </div>
             </div>
         </section>
-        <section class="left-sidebar-sec" data-toggle="collapse" ng-show="!toggleLeftSideBar">
+        <section class="left-sidebar-sec"  ng-hide="!toggleLeftSideBar">
             <ul class="sidebar-menu">
                 <li>
                     <a href="index.html">
@@ -91,7 +91,7 @@
             </ul>
 
         </section>
-        <section class="middle-sec row">
+        <section class="middle-sec row" ng-class="{expand: !toggleLeftSideBar}">
             <!--First row in Middle-->
             <div class="sec-div col-lg-8">
                 <div class="graph-sn panel panel-default">
@@ -167,7 +167,8 @@
     <script src="app/directives/visDirectives.js"></script>
     <script src="app/controllers/tblControllers.js"></script>
     <script src="app/directives/tblDirectives.js"></script>
-    <script src="app/controllers/viewBtnControllers.js"></script>
+    <script src="app/controllers/navBarBtnControllers.js"></script>
+    <script src="app/directives/navBarBtnDirectives.js"></script>
 </body>
 
 </html>
