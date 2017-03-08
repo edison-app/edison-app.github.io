@@ -198,3 +198,14 @@ text{
 .teammates-sn a{
     color: #505050 !important;
 }
+
+hc-line-chart {
+  width:720px;
+  height: 445px;
+}
+
+hc-bar-chart{
+  width:340px;
+  height: 470px;
+}
+

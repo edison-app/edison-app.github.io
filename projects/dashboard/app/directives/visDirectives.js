@@ -32,8 +32,6 @@ features.directive('hcLineChart', ['$location', function ($location) {
                 var graph = new Highcharts.Chart(element[0], {
                     chart: {
                         zoomType: 'x',
-                        width: 720,
-                        height: 445,
                     },
                     title: {
                         text: 'Grant Funds Execution'
@@ -98,8 +96,6 @@ features.directive('hcBarChart', function () {
                 var chart = new Highcharts.Chart(element[0], {
                     chart: {
                         type: 'column',
-                        width: 340,
-                        height: 477
                     },
                     credits: {
                         enabled: false
@@ -135,16 +131,6 @@ features.directive('hcBarChart', function () {
                         data: scope.data
                     }]
                 });
-                function handler1() {
-                    chart.setSize(420, 477);
-                    $(this).one("click", handler2);
-                }
-
-                function handler2() {
-                    chart.setSize(340, 477);
-                    $(this).one("click", handler1);
-                }
-                $('#nav-btn').one("click", handler1);
             }
             buildBarChart();
         }
