@@ -34,12 +34,14 @@ h1{
 
 h2{
 	margin:0px;
+	font-size: 24px;
 	font-family: "Open Sans", arial;
 	font-weight:300;
 }
 h3{
 	margin:0px;
 	font-family: "Open Sans", arial;
+	font-size: 18px;
 	font-weight:300;
 }
 .container{
@@ -63,7 +65,7 @@ a.wide, div.extra-wide, div.full-wide, a.box{
 a.wide h2, a.box h2{
 	position:absolute;
 	bottom:5px;
-	font-size:16px;
+	font-size:24px;
 }
 
 a.wide h2.top, a.box h2.top{
@@ -162,7 +164,7 @@ a.wide:active, a.box:active{
 }
 
 .funds-desc > * {
-	 margin: 8px 0;
+	 margin: 15px 0 !important;
 }
 
 .lime{background:#61b812;}
@@ -310,7 +312,7 @@ img.prof{
   border: none;
   color: #FFFFFF;
   text-align: center;
-  font-size: 28px;
+  font-size: 24px;
   padding: 7px;
   width: 200px;
   transition: all 0.5s;
