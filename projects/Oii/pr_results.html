@@ -1,79 +1,115 @@
-  <div class="container">
-		<h1>Start</h1>
-		
-		<img src="http://graph.facebook.com/freakout.jq/picture?type=small" width="50px" class="prof"/>
-		<div class="right">
-			<h2>Martabak</h2>
-			<p>Gosong</p>
-		</div>
-		<div class='spacer'>
-			<a href="javascript://" class='wide blue'>
-				<i class="icon-home"></i>
-				<h2>Show Desktop</h2>
-			</a>
-			<a href="javascript://" class='wide orange'>
-				<i class="icon-cog"></i>
-				<h2>Settings</h2>
-			</a>
-			<a href="javascript://" class='box redgay'>
-				<i class="icon-camera"></i>
-				<h2>Camera</h2>
-			</a>
-			<a href="javascript://" class='box lime'>
-				<i class="icon-heart"></i>
-				<h2>Favorite</h2>
-			</a>
-			<a href="javascript://" class='box bluefish'>
-				<i class="icon-twitter"></i>
-				<h2>Twitter</h2>
-			</a>
-			<a href="javascript://" class='box yellow'>
-				<i class="icon-map-marker"></i>
-				<h2>Places</h2>
-			</a>
-			<a href="javascript://" class='wide magenta gallery'>
-				<h2>Gallery</h2>
-			</a>
-			<a href="javascript://" class='box redgay'>
-				<i class="icon-globe"></i>
-				<h2>Browser</h2>
-			</a>
-			<a href="javascript://" class='box orange'>
-				<i class="icon-envelope-alt"></i>
-				<h2>E-mail</h2>
-			</a>
-			<a href="javascript://" class='wide blue cal_e'>
-				<h1>25</h1><p>Monday</p>
-				<h2 class="top cal_i">Sena Birthday Party At Jack House on 07:00 PM</h2>
-				<i class="icon-calendar"></i>
-			</a>
-			<a href="javascript://" class='box lime'>
-				<i class="icon-cloud"></i>
-				<h2>SkyDrive</h2>
-			</a>
-		</div>
 
-		<div class='spacer spacer3x'>
-			<a href="javascript://" class='box blue'>
-				<i class="icon-facebook"></i>
-				<h2>Facebook</h2>
-			</a>
-			<a href="javascript://" class='box bluefish'>
-				<i class="icon-facetime-video"></i>
-				<h2>FaceTime</h2>
-			</a>
-			<a href="javascript://" class='box redgay'>
-				<i class="icon-tasks"></i>
-				<h2>Task</h2>
-			</a>
-			<a href="javascript://" class='box magenta'>
-				<i class="icon-list-alt"></i>
-				<h2>Windows Explorer</h2>
-			</a>
-			<a href="javascript://" class='wide yellow'>
-				<i class="icon-play"></i>
-				<h2>Media</h2>
-			</a>
-		</div>
 
-	</div>
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+   <title></title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+   <div class="container">
+      <div class="center-text row">
+         <h1 class="header-text-style">OII i3 Application</h1>
+      </div>
+      <div class="row main-spacer-container">
+         <div class='col-lg-6'>
+            <div class='extra-wide yellow'>
+               <div class="row">
+               <div class='col-sm-6'>
+                  <h2>PR Award #:</h2>
+               </div>
+               <div class='col-sm-6'>
+                  <h2>{{info}}</h2>
+               </div>
+            </div>
+            </div>	
+            <div class='extra-wide  magenta'>
+               <div class ="row">
+               <div class='col-sm-6'>
+                  <h2>Grantee:</h2>
+               </div>
+               <div class='col-sm-6'>
+                  <h2>{{info}}</h2>
+               </div>
+            </div>
+			</div>
+            <div class='extra-wide blue'>
+               <div class="row">
+               <div class='col-sm-6'>
+                  <h2>Program Title:</h2>
+               </div>
+               <div class='col-sm-6'>
+                  <h2>{{info}}</h2>
+               </div>
+            </div>
+			</div>
+            <div class='extra-wide  rose'>
+               <div class="row">
+               <div class='col-sm-6'>
+                  <h2>Study Code:</h2>
+               </div>
+               <div class='col-sm-6'>
+                  <h2>{{info}}</h2>
+               </div>
+            </div>
+			</div>
+            <div class='extra-wide redgay'>
+               <div class ="row">
+               <div class='col-sm-6'>
+                  <h2>Program Officer:</h2>
+               </div>
+               <div class='col-sm-6'>
+                  <h2>{{info}}</h2>
+               </div>
+            </div>
+			</div>
+            <div class='extra-wide  orange'>
+               <h2 style="max-width:500px;">Performance Period End Date:</h2>
+               <h2>{{info}}</h2>
+            </div>
+         </div>
+         <div class='col-lg-6'>
+            <div class='extra-wide green'>
+               <div class="row">
+               <div class='col-sm-6'>
+                  <h2>Reporting FY:</h2>
+               </div>
+               <div class='col-sm-6 dropdown'>
+                  <button class="dropbtn">Choose Year</button>
+                  <div class="dropdown-content">
+                     <a href="#">2016</a>
+                     <a href="#">2015</a>
+                     <a href="#">2014</a>
+                  </div>
+               </div>
+            </div>
+			</div>
+            <div class='extra-wide  magenta funds-desc'>
+               <div class="row">
+			   <h2>Federal Grants Funds</h2>
+				<h3>(Current Budget Period, pulled from Performance Report):</h3>
+				<input type="text" class="form-control"></input>
+				</div> 			
+			</div>
+            <div class='extra-wide blue funds-desc'>
+				<div class="row">
+               <h2>Non-Federal Grants Funds</h2>
+               <h3>(Current Budget Period, pulled from Performance Report):</h3>
+               <input type="text" class="form-control"></input>
+				</div>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <script>
+      window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
+   </script>
+   <script src="js/vendor/bootstrap.min.js"></script>
+   <script src="js/main.js"></script>
+</body>
+</html>
+
