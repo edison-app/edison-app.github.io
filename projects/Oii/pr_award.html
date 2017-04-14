@@ -1,4 +1,4 @@
-  <!doctype html>
+<!doctype html>
 <html class="no-js" lang="">
 
 <head>
@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="container" ng-app="app">
     <div class="center-text row">
 		<h1 class="header-text-style">OII i3 Application</h1>
       </div>
@@ -22,8 +22,11 @@
 				<i class="fa fa-pencil" aria-hidden="true"></i>
 				<h2>Enter PR Award#</h2>
                 <div class="form-group">
-                <input type="text" class="form-control">
-                <a href="pr_results.html" class="button-arrow bluefish"><span>Next </span></a>
+                 <div ng-controller="prHttpCtrl"> 
+                <input id="pr-input" ng-model="prAwardNum" type="text" class="form-control">
+                    <h2{{prAwardNum}}></h2>
+                <div pr-href="{{prAwardNum}}" class="button-arrow bluefish"><span>Next </span></div>
+                </div>
                 </div>
                  
 			</div>
@@ -34,7 +37,11 @@
   </script>
 
   <script src="js/vendor/bootstrap.min.js"></script>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+  <script src="app/app.js"></script>
+  <script src="app/directives/PrNumSearch.js"></script>
+  <script src="app/controllers/Controllers.js"></script>
   <script src="js/main.js"></script>
 </body>
 
