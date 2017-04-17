@@ -14,4 +14,3 @@ app.directive('prHref', ['$location', '$window', function ($location, $window) {
                 }
         }
         }]);
-

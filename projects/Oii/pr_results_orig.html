@@ -9,8 +9,8 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body ng-app="app" ng-controller="SimpleDemoController">
-  <div class="container">
+<body>
+  <div class="container" ng-app="app">
     <div class="center-text row">
       <h1 class="header-text-style">OII i3 Application</h1>
     </div>
@@ -107,45 +107,39 @@
           </div>
           <div class="modal-body">
             <!--Start Model Body-->
-            <h1>Demo: Simple Lists</h1>
 
-            <div class="alert alert-success">
-              <strong>Instructions:</strong> Drag &amp; drop the list items to move them around, or just click to select
-              them. If that's too boring, check out the <a href="#/nested">nested container demo</a>
-            </div>
+            <div class="simpleDemo row" ng-controller="SimpleDemoController">
 
-            <div class="simpleDemo row">
-
-              <div class="col-md-12">
+              <div class="col-md-8">
                 <div class="row">
                   <div ng-repeat="(listName, list) in models.lists" class="col-md-6">
                     <div class="panel panel-info">
                       <div class="panel-heading">
                         <h3 class="panel-title">List {{listName}}</h3>
                       </div>
-                      <div class="panel-body"></div>
+                      <div class="panel-body">
+                        <!-- The dnd-list directive allows to drop elements into it.
+     The dropped data will be added to the referenced list -->
+                        <ul dnd-list="list">
+                          <!-- The dnd-draggable directive makes an element draggable and will
+         transfer the object that was assigned to it. If an element was
+         dragged away, you have to remove it from the original list
+         yourself using the dnd-moved attribute -->
+                          <li ng-repeat="item in list" dnd-draggable="item" dnd-moved="list.splice($index, 1)" dnd-effect-allowed="move" dnd-selected="models.selected = item"
+                            ng-class="{'selected': models.selected === item}">
+                            {{item.label}}
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <div view-source="simple">
-                  <ul dnd-list="list">
-                    <!-- The dnd-draggable directive makes an element draggable and will
-         transfer the object that was assigned to it. If an element was
-         dragged away, you have to remove it from the original list
-         yourself using the dnd-moved attribute -->
-                    <li ng-repeat="item in list" dnd-draggable="item" dnd-moved="list.splice($index, 1)" dnd-effect-allowed="move" dnd-selected="models.selected = item"
-                      ng-class="{'selected': models.selected === item}">
-                      {{item.label}}
-                    </li>
-                  </ul>
-
-
-                </div>
+                <div view-source="simple"></div>
 
               </div>
 
-              <div class="col-md-12">
+              <div class="col-md-4">
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h3 class="panel-title">Generated Model</h3>
@@ -176,11 +170,9 @@
   <script src="js/vendor/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
   <script src="js/vendor/angular-drag-and-drop-lists.js"></script>
-  <!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script> -->
   <script src="app/app.js"></script>
-  <script src="js/vendor/framework/view-source.js"></script> 
-  <script src="js/vendor/simple/simple.js"></script>
   <script src="app/controllers/Controllers.js"></script>
+  <script src="js/vendor/simple/simple.js"></script>
   <script src="js/main.js"></script>
 </body>
 

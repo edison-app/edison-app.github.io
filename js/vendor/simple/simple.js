@@ -1,9 +1,4 @@
-app.controller('prHttpCtrl',['$scope', function($scope){
-    $scope.prAwardNum = "PR Award Number";
-}])
-
-
-app.controller("SimpleDemoController",['$scope', function($scope) {
+angular.module("demo").controller("SimpleDemoController", function($scope) {
 
     $scope.models = {
         selected: null,
@@ -21,4 +16,4 @@ app.controller("SimpleDemoController",['$scope', function($scope) {
         $scope.modelAsJson = angular.toJson(model, true);
     }, true);
 
-}]);
+});
