@@ -7,13 +7,13 @@ app.controller("SimpleDemoController",['$scope', function($scope) {
 
     $scope.models = {
         selected: null,
-        lists: {"A": [], "B": []}
+        lists: {"Select": [], "Drop": []}
     };
 
     // Generate initial model
     for (var i = 1; i <= 3; ++i) {
-        $scope.models.lists.A.push({label: "Item A" + i});
-        $scope.models.lists.B.push({label: "Item B" + i});
+        $scope.models.lists.Select.push({label: "Item A" + i});
+        $scope.models.lists.Drop.push({label: "Item B" + i});
     }
 
     // Model to JSON for demo purpose

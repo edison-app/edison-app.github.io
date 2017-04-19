@@ -1,4 +1,4 @@
-/*app.controller("SimpleDemoController", function($scope) {
+app.controller("SimpleDemoController", function($scope) {
 
     $scope.models = {
         selected: null,
@@ -16,4 +16,4 @@
         $scope.modelAsJson = angular.toJson(model, true);
     }, true);
 
-}); */
+}); 
