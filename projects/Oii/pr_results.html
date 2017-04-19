@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body ng-app="app" ng-controller="SimpleDemoController">
+<body ng-app="app" ng-controller="dragDropCtrl">
   <div class="container">
     <div class="center-text row">
       <h1 class="header-text-style">OII i3 Application</h1>
@@ -77,12 +77,10 @@
             <div class='col-sm-6'>
               <h2>Reporting FY:</h2>
             </div>
-            <div class='col-sm-6 dropdown'>
+            <div class='col-sm-6 dropdown' ng-controller="yrDropCtrl">
               <button class="dropbtn">Choose Year</button>
-              <div class="dropdown-content">
-                <a href="#">2016</a>
-                <a href="#">2015</a>
-                <a href="#">2014</a>
+              <div class="dropdown-content" ng-repeat="year in years">
+                <a href='' yr-drop-href="{{year}}">{{year}}</a>
               </div>
             </div>
           </div>
