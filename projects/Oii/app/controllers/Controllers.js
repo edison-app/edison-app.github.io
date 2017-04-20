@@ -22,6 +22,16 @@ app.controller('dragDropCtrl', ['$scope', function ($scope) {
 
 }]);
 
-app.controller('yrDropCtrl', ['$scope', function ($scope) {
+app.controller('yrDropCtrl', ['$scope','$window','$location', function ($scope,$window,$location) {
     $scope.years = [2016, 2015, 2014, 2013, 2012, 2011, 2010];
+    $scope.addYrUrl = function(event){
+                        event.preventDefault();
+                        var newHref = angular.element(addyear).html();
+                        var absUrl = $location.absUrl();
+                        var landingUrl = absUrl + '&' + 'prAwardYr=' + newHref;
+                        $window.location.href = landingUrl;
+    }
 }])
+
+
+

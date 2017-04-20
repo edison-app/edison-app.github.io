@@ -15,18 +15,18 @@ app.directive('prHref', ['$location', '$window', function ($location, $window) {
     }
 }]);
 
-app.directive('yrDropHref', ['$location', '$window', function ($location, $window) {
+/*app.directive('yrDropHref', ['$location', '$window', function ($location, $window) {
     return {
         restrict: 'A',
         link: function (scope, element, attr) {
             element.attr('style', 'cursor:pointer');
-            element.on('click', function (event) {
+            element.on('click', function () {
                         var host = $location.host();
-                        var path = $location.path();
-                        var search = $location.search();
-                        var landingUrl = host + path + search + attr.yrDropHref;
+                        var url = $location.url();
+                       // var landingUrl = host + url + attr.yrDropHref;
+                       var landingUrl = "pr_results.html?prAwardNum=";
                         $window.location.href = landingUrl;
             });
         }
     }
-}]);
+}]);*/

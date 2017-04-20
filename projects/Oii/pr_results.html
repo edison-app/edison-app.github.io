@@ -80,7 +80,7 @@
             <div class='col-sm-6 dropdown' ng-controller="yrDropCtrl">
               <button class="dropbtn">Choose Year</button>
               <div class="dropdown-content" ng-repeat="year in years">
-                <a href='' yr-drop-href="{{year}}">{{year}}</a>
+                <a id="addyear" ng-click="addYrUrl($event)">{{year}}</a>
               </div>
             </div>
           </div>
