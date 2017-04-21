@@ -10,10 +10,12 @@ app.controller('dragDropCtrl', ['$scope', function ($scope) {
     };
 
     // Generate initial model
-    for (var i = 1; i <= 3; ++i) {
-        $scope.models.lists.Select.push({ label: "Item A" + i });
-        $scope.models.lists.Drop.push({ label: "Item B" + i });
+    for (var i = 1; i <= 10; ++i) {
+        $scope.models.lists.Select.push({ label: "Code #: " + i });
+        //$scope.models.lists.Drop.push({ label: "Code B" + i });
     }
+       $scope.models.lists.Drop.push();
+        
 
     // Model to JSON for demo purpose
     $scope.$watch('models', function (model) {
@@ -24,7 +26,7 @@ app.controller('dragDropCtrl', ['$scope', function ($scope) {
 
 app.controller('yrDropCtrl', ['$scope', '$window', '$location', function ($scope, $window, $location) {
     $scope.years = [2016, 2015, 2014, 2013, 2012, 2011, 2010];
-    $scope.addYrUrl = function (event,addYearVar) {
+    $scope.addYrUrl = function (event, addYearVar) {
         event.preventDefault();
 
         var result = document.getElementsByClassName("addyear");
@@ -32,7 +34,7 @@ app.controller('yrDropCtrl', ['$scope', '$window', '$location', function ($scope
         var absUrl = $location.absUrl();
         var landingUrl = absUrl + '&' + 'prAwardYr=' + addYearVar;
         $window.location.href = landingUrl;
-        
+
     }
 }])
 
