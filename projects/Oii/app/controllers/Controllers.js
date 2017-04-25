@@ -1,26 +1,44 @@
 app.controller('prHttpCtrl', ['$scope', function ($scope) {
     $scope.prAwardNum = "PR Award Number";
-}])
+}]);
 
-app.controller('dragDropCtrl', ['$scope', function ($scope) {
+app.controller('dragDropCtrl', ['$scope', '$window', '$localStorage', function ($scope, $localStorage) {
 
     $scope.models = {
         selected: null,
-        lists: { "Select": [], "Drop": [] }
+        lists: {
+            "Select": [],
+            "Drop": []
+        }
     };
 
     // Generate initial model
     for (var i = 1; i <= 10; ++i) {
-        $scope.models.lists.Select.push({ label: "Code #: " + i });
-        //$scope.models.lists.Drop.push({ label: "Code B" + i });
+
+        $scope.models.lists.Select.push({
+            label: "Code A: " + i
+        });
+        // $scope.models.lists.Drop.push({ label: "Code B" + i });
+        $scope.models.lists.Drop.push();
     }
-       $scope.models.lists.Drop.push();
-        
 
     // Model to JSON for demo purpose
-    $scope.$watch('models', function (model) {
+    $scope.$watch('models.lists.Drop', function (model) {
         $scope.modelAsJson = angular.toJson(model, true);
     }, true);
+
+    $scope.saveLocStor = function () {
+        $localStorage.savedLocStorage = $scope.models.lists.Drop;
+        console.log($localStorage.savedLocStorage)
+    };
+    $scope.loadLocStor = function () {
+        $scope.locStorage = $localStorage.savedLocStorage;
+    }
+
+    $scope.deleteLocStor = function () {
+        $scope.delLocStorage = delete $localStorage.savedLocStorage;
+    }
+
 
 }]);
 
@@ -35,7 +53,5 @@ app.controller('yrDropCtrl', ['$scope', '$window', '$location', function ($scope
         var landingUrl = absUrl + '&' + 'prAwardYr=' + addYearVar;
         $window.location.href = landingUrl;
 
-    }
-}])
-
-
+    };
+}]);

@@ -9,8 +9,8 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body>
-  <div class="container" ng-app="app">
+<body ng-app="app" ng-controller="dragDropCtrl">
+  <div class="container">
     <div class="center-text row">
       <h1 class="header-text-style">OII i3 Application</h1>
     </div>
@@ -77,12 +77,10 @@
             <div class='col-sm-6'>
               <h2>Reporting FY:</h2>
             </div>
-            <div class='col-sm-6 dropdown'>
+            <div class='col-sm-6 dropdown' ng-controller="yrDropCtrl">
               <button class="dropbtn">Choose Year</button>
               <div class="dropdown-content">
-                <a href="#">2016</a>
-                <a href="#">2015</a>
-                <a href="#">2014</a>
+                <a class="addyear" ng-click="addYrUrl($event,year)" ng-repeat="year in years">{{year}} </a>
               </div>
             </div>
           </div>
@@ -107,19 +105,22 @@
           </div>
           <div class="modal-body">
             <!--Start Model Body-->
+            <h1>Demo: Simple Lists</h1>
 
-            <div class="simpleDemo row" ng-controller="SimpleDemoController">
+            <div class="alert alert-success">
+              <strong>Instructions:</strong> Please drag &amp; drop the codes from the "select" column to the "drop column".
+            </div>
 
-              <div class="col-md-8">
+            <div class="simpleDemo row">
+
+              <div class="col-md-12">
                 <div class="row">
                   <div ng-repeat="(listName, list) in models.lists" class="col-md-6">
                     <div class="panel panel-info">
                       <div class="panel-heading">
-                        <h3 class="panel-title">List {{listName}}</h3>
+                        <h3 class="panel-title">School Code(s) {{listName}}</h3>
                       </div>
                       <div class="panel-body">
-                        <!-- The dnd-list directive allows to drop elements into it.
-     The dropped data will be added to the referenced list -->
                         <ul dnd-list="list">
                           <!-- The dnd-draggable directive makes an element draggable and will
          transfer the object that was assigned to it. If an element was
@@ -134,12 +135,9 @@
                     </div>
                   </div>
                 </div>
-
-                <div view-source="simple"></div>
-
               </div>
 
-              <div class="col-md-4">
+              <div class="col-md-12">
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h3 class="panel-title">Generated Model</h3>
@@ -155,7 +153,7 @@
             <!--End Modal Body-->
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <a ng-click="saveLocStor()" type="button" class="button-arrow bluefish" data-toggle="modal" data-target="#myModal">Next</a>
           </div>
         </div>
 
@@ -169,10 +167,17 @@
   </script>
   <script src="js/vendor/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
-  <script src="js/vendor/angular-drag-and-drop-lists.js"></script>
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.min.js"></script> -->
+  <script src="js/vendor/angular-drag-and-drop-lists.min.js"></script>
+  <script src="js/vendor/ngStorage.min.js"></script>
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script> -->
   <script src="app/app.js"></script>
+ <!-- <script src="js/vendor/framework/view-source.js"></script> 
+  <script src="js/vendor/simple/simple.js"></script> 
+    <script src="js/vendor/framework/vendor/prism.js"></script>
+    <script src="js/vendor/framework/demo-framework.js"></script> -->
+    <script src="js/vendor/framework/view-source.js"></script>
   <script src="app/controllers/Controllers.js"></script>
-  <script src="js/vendor/simple/simple.js"></script>
   <script src="js/main.js"></script>
 </body>
 
