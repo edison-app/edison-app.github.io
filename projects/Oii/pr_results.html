@@ -99,13 +99,13 @@
 
         <!-- Modal content-->
         <div class="modal-content">
-          <div class="modal-header">
+          <div class="modal-header" style="padding-bottom:20px;">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Oii</h4>
+            <!--<h4 class="modal-title"></h4> -->
           </div>
           <div class="modal-body">
             <!--Start Model Body-->
-            <h1>Oii: School Codes</h1>
+            <h1>NCES School Codes</h1>
 
             <div class="alert alert-success">
               <strong>Instructions:</strong> Please drag &amp; drop the codes from the "select" column to the "drop column".
@@ -115,19 +115,18 @@
 
               <div class="col-md-12">
                 <div class="row">
-                  <div ng-repeat="(listName, list) in models.lists" class="col-md-6">
+                  <div ng-repeat="list in models" class="col-md-6">
                     <div class="panel panel-info">
                       <div class="panel-heading">
                         <h3 class="panel-title">School Code(s) {{listName}}</h3>
                       </div>
+
+                      <input id="pr-input" ng-model="codes" type="text" class="form-control" ng-value="defVal">
                       <div class="panel-body">
-                        <ul dnd-list="list">
-                          <!-- The dnd-draggable directive makes an element draggable and will
-         transfer the object that was assigned to it. If an element was
-         dragged away, you have to remove it from the original list
-         yourself using the dnd-moved attribute -->
-                          <li ng-repeat="item in list" dnd-draggable="item" dnd-moved="list.splice($index, 1)" dnd-effect-allowed="move" dnd-selected="models.selected = item"
-                            ng-class="{'selected': models.selected === item}">
+                        <ul dnd-list dnd-drop="onDrop(list, item, index)">
+                          <li ng-repeat="item in list.items | filter:codes" dnd-draggable="getSelectedItemsIncluding(list, item)" dnd-dragstart="onDragstart(list, event)"
+                            dnd-moved="onMoved(list)" dnd-dragend="list.dragging = false" dnd-selected="item.selected = !item.selected"
+                            ng-class="{'selected': item.selected}" ng-hide="list.dragging && item.selected">
                             {{item.label}}
                           </li>
                         </ul>
@@ -153,7 +152,7 @@
             <!--End Modal Body-->
           </div>
           <div class="modal-footer">
-            <a ng-click='saveLocStor()'; type="button" class="button-arrow bluefish" data-dismiss="modal">Next</a>
+            <a ng-click='saveLocStor()' ; type="button" class="button-arrow bluefish" data-dismiss="modal">Next</a>
           </div>
         </div>
 
