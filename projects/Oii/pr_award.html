@@ -15,23 +15,28 @@
 <body>
   <div class="container" ng-app="app">
     <div class="center-text row">
-		<h1 class="header-text-style">OII i3 Application</h1>
-      </div>
-		<div class='spacer row'>
-			<div class='full-wide redgay'>
-				<i class="fa fa-pencil" aria-hidden="true"></i>
-				<h2>Enter PR Award#</h2>
-                <div class="form-group">
-                 <div ng-controller="prHttpCtrl"> 
-                <input id="pr-input" ng-model="prAwardNum" type="text" class="form-control">
-                    <h2{{prAwardNum}}></h2>
-                <div pr-href="{{prAwardNum}}" class="button-arrow bluefish"><span>Next </span></div>
-                </div>
-                </div>
-                 
-			</div>
-		</div>
-	</div>
+      <h1 class="header-text-style">OII i3 Application</h1>
+    </div>
+    <div class='spacer row'>
+      <form name="awdForm">
+        <div class='full-wide redgay'>
+          <i class="fa fa-pencil" aria-hidden="true"></i>
+          <h2>Enter PR Award#</h2>
+          <div class="form-group">
+            <div ng-controller="prHttpCtrl">
+              <input name="prAwdInput" ng-model="prAwdInput" id="pr-input" type="text" class="form-control" 
+              ng-maxlength="11" ng-minlength="11" ng-pattern="/^[a-zA-Z0-9^ ]/" required>
+              <h2 ng-show="awdForm.prAwdInput.$error.minlength">PR# is too short.</h2>
+              <h2 ng-show="awdForm.prAwdInput.$error.maxlength">PR# is too long.</h2>
+              <h2 ng-show="awdForm.prAwdInput.$error.pattern">PR# is not valid</h2>
+              <div pr-href="{{prAwdInput}}" class="button-arrow bluefish"> Next </div>
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
   <script>
     window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
   </script>
@@ -39,6 +44,7 @@
   <script src="js/vendor/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.js"></script>
   <script src="js/vendor/angular-drag-and-drop-lists.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
   <script src="app/app.js"></script>
