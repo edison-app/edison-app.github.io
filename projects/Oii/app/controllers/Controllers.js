@@ -65,10 +65,10 @@ app.controller('dragDropCtrl', ['$scope', '$window', '$localStorage', function (
         }
     });*/
 
-        for (var i = 1; i <= 10; ++i) {
-           $scope.models[0].items.push({ label: "Item Code: " + i });
+    for (var i = 1; i <= 10; ++i) {
+        $scope.models[0].items.push({ label: "Item Code: " + i });
 
-        }
+    }
 
 
     // Model to JSON for demo purpose
@@ -95,11 +95,21 @@ app.controller('yrDropCtrl', ['$scope', '$window', '$location', function ($scope
     $scope.addYrUrl = function (event, addYearVar) {
         event.preventDefault();
 
-        var result = document.getElementsByClassName("addyear");
-        var newHref = angular.element(result).html();
         var absUrl = $location.absUrl();
         var landingUrl = absUrl + '&' + 'prAwardYr=' + addYearVar;
         $window.location.href = landingUrl;
-
     };
+
 }]);
+
+app.controller('yrLabelUpdate', ['$scope', '$window', function ($scope, $window) {
+    $window.onload = function () {
+        var urlParams = new URLSearchParams($window.location.search);
+        var yrUrlVar = urlParams.get('prAwardYr');
+        if (yrUrlVar) {
+            var yrBtn = document.querySelector('#yrBtn');
+            angular.element(yrBtn).text(yrUrlVar);
+        }
+
+    }
+}])

@@ -78,8 +78,8 @@
               <h2>Reporting FY:</h2>
             </div>
             <div class='col-sm-6 dropdown' ng-controller="yrDropCtrl">
-              <button class="dropbtn">Choose Year</button>
-              <div class="dropdown-content">
+              <button id="yrBtn"class="dropbtn" ng-controller="yrLabelUpdate">Choose Year</button>
+              <div class="dropdown-content">           
                 <a class="addyear" ng-click="addYrUrl($event,year)" ng-repeat="year in years">{{year}} </a>
               </div>
             </div>
