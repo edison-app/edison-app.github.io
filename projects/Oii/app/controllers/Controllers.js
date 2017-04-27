@@ -1,5 +1,5 @@
 app.controller('validationCtrl', ['$scope', '$attrs', '$window', '$location', function ($scope, $attrs, $window, $location) {
-    $scope.prAwdInput="test";
+    $scope.prAwdInput="";
     $scope.submitForm = function () {
         if ($scope.awdForm.$valid) {
             var butId = document.querySelector('#pr-input');
