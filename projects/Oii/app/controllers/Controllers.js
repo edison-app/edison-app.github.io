@@ -1,5 +1,17 @@
-app.controller('prHttpCtrl', ['$scope', function ($scope) {
-    $scope.prAwardNum = "PR Award Number";
+app.controller('validationCtrl', ['$scope', '$attrs', '$window', '$location', function ($scope, $attrs, $window, $location) {
+    $scope.prAwdInput="test";
+    $scope.submitForm = function () {
+        if ($scope.awdForm.$valid) {
+            var butId = document.querySelector('#pr-input');
+            var newHref =angular.element(butId).attr('pr-href');
+            var landingUrl = "pr_results.html?prAwardNum=" + newHref;
+            $window.location.href = landingUrl;
+        } else { 
+            var messContainer = document.querySelector('#messages');
+            var newHref =angular.element(messContainer).html('<h2 ng-show="awdForm.prAwdInput.$error.pattern">PR# was not valid. Please try again.</h2>')
+        
+        }
+    }
 }]);
 
 app.controller('dragDropCtrl', ['$scope', '$window', '$localStorage', function ($scope, $localStorage) {
