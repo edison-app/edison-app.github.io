@@ -79,7 +79,7 @@
             </div>
             <div class='col-sm-6 dropdown' ng-controller="yrDropCtrl">
               <button id="yrBtn"class="dropbtn" ng-controller="yrLabelUpdate">Choose Year</button>
-              <div class="dropdown-content">           
+              <div class="dropdown-content">
                 <a class="addyear" ng-click="addYrUrl($event,year)" ng-repeat="year in years">{{year}} </a>
               </div>
             </div>
@@ -91,7 +91,7 @@
   <div class="div-center row">
     <!-- Trigger the modal with a button -->
     <div class="form-group">
-      <a type="button" class="button-arrow bluefish" data-toggle="modal" data-target="#myModal">Next</a>
+      <button id="modalBtnActive" ng-controller="switchBtnCtrl" ng-show="btnSwitch()" type="button" class="button-arrow bluefish" data-toggle="modal" data-target="#myModal" >Next</button>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
@@ -152,7 +152,7 @@
             <!--End Modal Body-->
           </div>
           <div class="modal-footer">
-            <a ng-click='saveLocStor()' ; type="button" class="button-arrow bluefish" data-dismiss="modal">Next</a>
+            <a ng-click='saveLocStor()' type="button" class="button-arrow bluefish" data-dismiss="modal">Next</a>
           </div>
         </div>
 

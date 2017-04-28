@@ -19,17 +19,16 @@
     </div>
     <div class='spacer row' ng-controller="validationCtrl">
       <form name="awdForm" ng-submit="submitForm()" novalidate>
-        <div class='full-wide redgay form-group' >
+        <div class='full-wide redgay form-group'>
           <i class="fa fa-pencil" aria-hidden="true"></i>
           <h2>Enter PR Award#</h2>
-              <input name="prAwdInput" ng-model="prAwdInput" id="pr-input" pr-href="{{prAwdInput}}" type="text" class="form-control" 
-              ng-maxlength="11" ng-minlength="11" ng-pattern="/^[a-zA-Z0-9]*$/" required>
-              
-              <h2 ng-show="awdForm.prAwdInput.$error.minlength">PR# is too short.</h2>
-              <h2 ng-show="awdForm.prAwdInput.$error.maxlength">PR# is too long.</h2>
-              <h2 ng-show="awdForm.prAwdInput.$error.pattern">PR# has invalid characters.</h2>
-              <button type="submit" class="button-arrow bluefish"> Next </button>
-                <div id="messages"> </div>
+          <input name="prAwdInput" ng-model="prAwdInput" id="pr-input" pr-href="{{prAwdInput}}" type="text" class="form-control" ng-maxlength="11" ng-minlength="11" ng-pattern="/^[a-zA-Z0-9]*$/" required>
+
+          <h2 ng-show="awdForm.prAwdInput.$error.minlength">PR# is too short.</h2>
+          <h2 ng-show="awdForm.prAwdInput.$error.maxlength">PR# is too long.</h2>
+          <h2 ng-show="awdForm.prAwdInput.$error.pattern">PR# has invalid characters.</h2>
+          <button type="submit" class="button-arrow bluefish"> Next </button>
+          <div id="messages"> </div>
         </div>
       </form>
     </div>
