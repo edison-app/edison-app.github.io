@@ -1,5 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -80,7 +81,7 @@
               <h2>Reporting FY:</h2>
             </div>
             <div class='col-sm-6 dropdown' ng-controller="yrDropCtrl">
-              <button id="yrBtn"class="dropbtn" ng-controller="yrLabelUpdate">Choose Year</button>
+              <button id="yrBtn" class="dropbtn" ng-controller="yrLabelUpdate">Choose Year</button>
               <div class="dropdown-content">
                 <a class="addyear" ng-click="addYrUrl($event,year)" ng-repeat="year in years">{{year}} </a>
               </div>
@@ -93,7 +94,7 @@
   <div class="div-center row">
     <!-- Trigger the modal with a button -->
     <div class="form-group">
-      <button id="modalBtnActive" ng-controller="switchBtnCtrl" ng-show="btnSwitch()" type="button" class="button-arrow bluefish" data-toggle="modal" data-target="#myModal" >Next</button>
+      <button id="modalBtnActive" ng-controller="switchBtnCtrl" ng-show="btnSwitch()" type="button" class="button-arrow bluefish" data-toggle="modal" data-target="#myModal">Next</button>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
@@ -115,7 +116,7 @@
 
             <div class="simpleDemo row">
 
-              <div class="col-md-12">
+              <div class="col-md-12" ng-controller="paginationCtrl">
                 <div class="row">
                   <div ng-repeat="list in models" class="col-md-6">
                     <div class="panel panel-info">
@@ -125,13 +126,25 @@
 
                       <input id="pr-input" ng-model="codes" type="text" class="form-control" ng-value="defVal">
                       <div class="panel-body">
+                        <select ng-model="pageSize" id="pageSize" class="form-control">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+     </select>
                         <ul dnd-list dnd-drop="onDrop(list, item, index)">
-                          <li ng-repeat="item in list.items | filter:codes" dnd-draggable="getSelectedItemsIncluding(list, item)" dnd-dragstart="onDragstart(list, event)"
-                            dnd-moved="onMoved(list)" dnd-dragend="list.dragging = false" dnd-selected="item.selected = !item.selected"
+                          <li ng-repeat="item in list.items | filter:codes | startFrom:currentPage*pageSize | limitTo:pageSize" dnd-draggable="getSelectedItemsIncluding(list, item)" dnd-dragstart="onDragstart(list, event)" dnd-moved="onMoved(list)" dnd-dragend="list.dragging = false" dnd-selected="item.selected = !item.selected"
                             ng-class="{'selected': item.selected}" ng-hide="list.dragging && item.selected">
                             {{item.label}}
                           </li>
                         </ul>
+                        <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+        Previous
+    </button>
+    {{currentPage+1}}/{{numberOfPages()}}
+    <button ng-disabled="currentPage >= getData().length/pageSize - 1" ng-click="currentPage=currentPage+1">
+        Next
+    </button>
                       </div>
                     </div>
                   </div>
